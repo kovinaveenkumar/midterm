@@ -43,7 +43,7 @@ def test_get_latest(setup_calculations):
     _ = setup_calculations
     latest = Calculations.get_latest()
     assert (
-        latest.num1 == Decimal('20') and latest.num2 == Decimal('3')
+        latest.operand1 == Decimal('20') and latest.operand2 == Decimal('3')
     ), "Did not get the correct latest calculation"
 
 def test_find_by_operation(setup_calculations):
@@ -64,4 +64,4 @@ def test_get_latest_with_empty_history():
     Calculations.clear_history()
     assert (
         Calculations.get_latest() is None
-    ), "Expected None for latest calculation with empty history"
+    ), "Expected None for latest calculation with empty history" 
