@@ -24,3 +24,12 @@ midterm/
 │── __pycache__/             # Python cache files
 ```
 
+
+## Features
+- **Command-Line Interface (REPL)**: Interactive mode for executing operations.
+- **Calculation History**: Stores, retrieves, and clears previous calculations.
+- **Plugin System**: Allows adding new features dynamically without modifying the core code.
+- **Logging System**: Records errors, warnings, and application events for debugging.
+- **Data Handling with Pandas**: Manages history records and saves them as CSV files.
+- **Exception Handling**: Implements try/except mechanisms for handling runtime errors.
+- **Design Patterns**: Uses Facade, Command, and Strategy patterns for a scalable structure.
