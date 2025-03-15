@@ -1,63 +1,72 @@
-Advanced Python Calculator
-Project Overview
+Okay, let me provide the README exactly as it should appear in GitHub's Markdown format. This is the raw format that GitHub uses to render the README properly:
+markdownCopy# Advanced Python Calculator
+
+## Project Overview
+
 This project implements an advanced Python-based calculator application designed to demonstrate professional software development practices. The calculator integrates clean, maintainable code, design patterns, comprehensive logging, dynamic configuration via environment variables, data handling with Pandas, and a command-line interface (REPL) for user interaction.
-Features
 
-Command-Line Interface (REPL): Interactive shell for performing calculations
-Core Arithmetic Operations: Addition, subtraction, multiplication, and division
-History Management with Pandas: Store, retrieve, and manipulate calculation history
-Plugin System: Dynamically load new operations without modifying core code
-Professional Logging: Detailed logging with configurable severity levels
-Environment Variable Configuration: Dynamic application configuration
-Robust Exception Handling: LBYL and EAFP principles for error management
+## Features
 
-Plugin System
+- **Command-Line Interface (REPL)**: Interactive shell for performing calculations
+- **Core Arithmetic Operations**: Addition, subtraction, multiplication, and division
+- **History Management with Pandas**: Store, retrieve, and manipulate calculation history
+- **Plugin System**: Dynamically load new operations without modifying core code
+- **Professional Logging**: Detailed logging with configurable severity levels
+- **Environment Variable Configuration**: Dynamic application configuration
+- **Robust Exception Handling**: LBYL and EAFP principles for error management
+
+## Plugin System
+
 The calculator features a flexible plugin system that allows for dynamic loading of operations without modifying the core application code. This system enables:
 
-Dynamically loading and integrating plugins at runtime
-Adding new operations without changing the main codebase
-Accessing all available operations through a menu command
+- Dynamically loading and integrating plugins at runtime
+- Adding new operations without changing the main codebase
+- Accessing all available operations through a menu command
 
-Core Operation Plugins
+### Core Operation Plugins
+
 The calculator comes with these built-in operation plugins:
 
-Add Plugin: Performs addition of two operands
-Copyadd 5 3  # Result: 8
+1. **Add Plugin**: Performs addition of two operands
+add 5 3  # Result: 8
+Copy
+2. **Subtract Plugin**: Performs subtraction of two operands
+subtract 10 4  # Result: 6
+Copy
+3. **Multiply Plugin**: Performs multiplication of two operands
+multiply 6 7  # Result: 42
+Copy
+4. **Divide Plugin**: Performs division of two operands
+divide 20 5  # Result: 4
+Copy
+### Control Commands
 
-Subtract Plugin: Performs subtraction of two operands
-Copysubtract 10 4  # Result: 6
-
-Multiply Plugin: Performs multiplication of two operands
-Copymultiply 6 7  # Result: 42
-
-Divide Plugin: Performs division of two operands
-Copydivide 20 5  # Result: 4
-
-
-Control Commands
 The REPL interface also supports these control commands:
 
-Menu Command: Displays all available operations and commands
-Copymenu  # Shows a list of all available commands
+1. **Menu Command**: Displays all available operations and commands
+menu  # Shows a list of all available commands
+Copy
+2. **Exit Command**: Terminates the calculator application
+exit  # Exits the application
+Copy
+### Adding New Plugins
 
-Exit Command: Terminates the calculator application
-Copyexit  # Exits the application
-
-
-Adding New Plugins
 To create a new plugin:
 
-Create a new Python file in the plugins directory
-Define a class that implements the required interface
-The plugin will be automatically discovered and loaded at runtime
+1. Create a new Python file in the plugins directory
+2. Define a class that implements the required interface
+3. The plugin will be automatically discovered and loaded at runtime
 
-Design Patterns Implemented
-1. Factory Method Pattern
-The Calculation class implements a factory method (create) that constructs and returns calculation objects, abstracting the creation process from the client code.
-pythonCopy@staticmethod
+## Design Patterns Implemented
+
+### 1. Factory Method Pattern
+The `Calculation` class implements a factory method (`create`) that constructs and returns calculation objects, abstracting the creation process from the client code.
+
+```python
+@staticmethod
 def create(operand1: Decimal, operand2: Decimal, operation: Callable[[Decimal, Decimal], Decimal]):
-    """Creates and returns a new Calculation object."""
-    return Calculation(operand1, operand2, operation)
+ """Creates and returns a new Calculation object."""
+ return Calculation(operand1, operand2, operation)
 2. Command Pattern
 Commands are implemented as classes with an execute method, encapsulating operations like history deletion:
 pythonCopyclass DeleteHistoryCommand:
