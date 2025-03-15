@@ -24,7 +24,6 @@ midterm/
 │── .coverage                # Coverage reports
 │── .pytest_cache/           # Pytest cache
 │── .github/                 # GitHub workflow configurations
-│── __pycache__/             # Python cache files
 ```
 
 
